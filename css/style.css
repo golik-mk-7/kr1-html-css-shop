@@ -3,15 +3,17 @@
    =================================== */
 
 :root {
-    /* Основные цвета проекта */
-    --color-bg: #ffffff;
-    --color-text: #222222;
-    --color-muted: #666666;
-    --color-primary: #0057b8;
-    --color-primary-dark: #003f86;
-    --color-border: #dddddd;
-    --color-surface: #f7f7f7;
-    --color-surface-accent: #eef5ff;
+    /* Цвета из макета Marydivita */
+    --color-bg: #ffb271;
+    --color-text: #673a09;
+    --color-heading: #000000;
+    --color-primary: #f50909;
+    --color-primary-dark: #c40707;
+    --color-muted: #8a5a2b;
+    --color-border: #673a09;
+    --color-surface: #ef9950;
+    --color-surface-accent: #ffd0a0;
+    --color-card: #ef9950;
     --color-danger: #b00020;
     --color-success: #168a2f;
     --color-success-bg: #eefaf0;
@@ -43,10 +45,16 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Georgia, "Times New Roman", serif;
     line-height: 1.5;
     color: var(--color-text);
     background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-heading);
 }
 
 header,
@@ -69,6 +77,9 @@ footer {
 
 a {
     color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
 }
 
 a:hover {
@@ -87,7 +98,7 @@ a:focus-visible {
     background-color: var(--color-primary);
     text-decoration: none;
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: 999px;
     cursor: pointer;
 }
 
@@ -112,12 +123,22 @@ a:focus-visible {
 .site-header {
     max-width: var(--container-width);
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
 }
 
 .site-logo {
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--color-text);
+    display: inline-flex;
+    align-items: center;
+}
+
+.site-logo__img {
+    display: block;
+    height: 80px;
+    widtht: 80px;
 }
 
 .site-nav__list {
@@ -127,21 +148,23 @@ a:focus-visible {
     align-items: center;
     gap: var(--space-md);
     padding: 0;
-    margin: var(--space-md) 0 0;
+    margin: 0;
     list-style: none;
 }
 
 .site-nav__list a {
     display: inline-block;
     padding: var(--space-sm) var(--space-md);
-    color: var(--color-primary);
+    color: var(--color-text);
     text-decoration: none;
     border-radius: var(--radius-sm);
 }
 
 .site-nav__list a:hover {
-    color: var(--color-white);
-    background-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: transparent;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
 }
 
 .hero {
@@ -173,17 +196,31 @@ a:focus-visible {
     gap: var(--space-sm);
     margin-bottom: 0;
     padding: var(--space-md);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-text);
     border-radius: var(--radius-md);
-    background-color: var(--color-bg);
+    background-color: var(--color-card);
 }
 
-.product-card:hover {
-    border-color: var(--color-primary);
+.product-card__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
 }
 
 .product-card h3 {
     margin-top: 0;
+    margin-bottom: 0;
+}
+
+.product-card p {
+    margin: 0;
+}
+
+.product-card__price {
+    color: var(--color-primary);
+    font-weight: 700;
 }
 
 .product-card .button {
@@ -208,6 +245,8 @@ a:focus-visible {
     padding: var(--space-lg);
     border: none;
     border-radius: var(--radius-lg);
+    background-color: var(--color-surface-accent);
+    color: var(--color-text);
 }
 
 .order-dialog::backdrop {
@@ -228,8 +267,11 @@ a:focus-visible {
 .form-field textarea {
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+    border: none;
+    border-bottom: 1px solid var(--color-text);
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-text);
     font: inherit;
 }
 
@@ -246,7 +288,7 @@ a:focus-visible {
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-    border-color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
 }
 
 .form-field input:focus-visible,
@@ -320,7 +362,7 @@ html {
 .catalog-filters {
     grid-area: filters;
     padding: var(--space-md);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-text);
     border-radius: var(--radius-md);
     background-color: var(--color-surface);
 }
@@ -339,7 +381,7 @@ html {
 .filters-form fieldset {
     margin: 0;
     padding: var(--space-md);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-text);
     border-radius: var(--radius-sm);
 }
 
@@ -355,7 +397,10 @@ html {
 .filters-form input[type="number"] {
     width: 100%;
     padding: 8px 10px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+    border: none;
+    border-bottom: 1px solid var(--color-text);
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-text);
     font: inherit;
 }

@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-    <title>Каталог товаров – Учебный интернет-магазин</title>
+    <title>Каталог товаров – Учебный интернет-магазин моего питомника</title>
     <link rel="stylesheet" href="css/style.css">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Учебный интернет-магазин">
-    <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+    <meta property="og:title" content="Учебный интернет-магазин моего питомника">
+    <meta property="og:description" content="Учебный frontend-проект интернет-магазина по моему питомнику.">
     <meta property="og:image" content="https://golik-mk-7.github.io/kr1-html-css-shop/images/preview.jpg">
 </head>
 <body>
 
     <header>
         <div class="site-header">
-            <a class="site-logo" href="index.html">ShopProject</a>
+            <a class="site-logo" href="index.html">
+                <img src="images/logo.jpg" alt="ShopProject" class="site-logo__img">
+            </a>
             <nav class="site-nav" aria-label="Основная навигация">
                 <ul class="site-nav__list">
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="contacts.html">Контакты</a></li>
                     <li><a href="index.html#advantages">Преимущества</a></li>
-                    <li><a href="index.html#popular">Популярные товары</a></li>
+                    <li><a href="index.html#popular">Популярные котики</a></li>
                     <li><a href="index.html#contacts">Обратная связь</a></li>
                 </ul>
             </nav>
@@ -38,10 +40,10 @@
         </nav>
 
         <section class="section">
-            <h1>Каталог товаров</h1>
+            <h1>Каталог котиков</h1>
             <p>
-                На этой странице представлен учебный каталог товаров.
-                В дальнейшем здесь будут добавлены фильтры, сортировка и более подробные карточки.
+                На этой странице представлен учебный каталог котиков.
+                В дальнейшем здесь будут добавлены фильтры, сортировка и более подробные карточки для котиков.
             </p>
         </section>
 
@@ -78,7 +80,7 @@
                         <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
 
                         <label for="price-to">До</label>
-                        <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+                        <input id="price-to" name="price-to" type="number" min="0" placeholder="5000000">
                     </fieldset>
 
                     <button class="button" type="submit">Применить</button>
@@ -87,28 +89,31 @@
             </aside>
 
             <section class="catalog-products">
-                <h2>Список товаров</h2>
+                <h2>Список котиков</h2>
 
                 <div class="products-grid">
 
                     <article class="product-card">
-                        <h3>Товар 1</h3>
-                        <p>Краткое описание учебного товара.</p>
-                        <p>Цена: 1000 руб.</p>
+                        <img class="product-card__image" src="images/cat-1.jpg" alt="Товар 1">
+                        <h3>Котик 1</h3>
+                        <p>Краткое описание учебного котика.</p>
+                        <p class="product-card__price">Цена: 100000 руб.</p>
                         <a class="button" href="index.html#popular">Подробнее</a>
                     </article>
 
                     <article class="product-card">
-                        <h3>Товар 2</h3>
-                        <p>Краткое описание учебного товара.</p>
-                        <p>Цена: 1500 руб.</p>
+                        <img class="product-card__image" src="images/cat-2.jpg" alt="Товар 2">
+                        <h3>Котик 2</h3>
+                        <p>Краткое описание учебного котика.</p>
+                        <p class="product-card__price">Цена: 150000 руб.</p>
                         <a class="button" href="index.html#popular">Подробнее</a>
                     </article>
 
                     <article class="product-card">
-                        <h3>Товар 3</h3>
-                        <p>Краткое описание учебного товара.</p>
-                        <p>Цена: 2000 руб.</p>
+                        <img class="product-card__image" src="images/cat-3.jpg" alt="Товар 3">
+                        <h3>Котик 3</h3>
+                        <p>Краткое описание учебного котика.</p>
+                        <p class="product-card__price">Цена: 200000 руб.</p>
                         <a class="button" href="index.html#popular">Подробнее</a>
                     </article>
 
@@ -120,7 +125,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+        <p>&copy; 2026 Учебный проект. Все права защищены котиками.</p>
         <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </footer>
 
